@@ -1,7 +1,7 @@
 flex-add
 这是一个关于flexbox基础的骰子布局
- [demo01](http://htmlpreview.github.com/?https://github.com/waynehu2014/react-weektime-picker/blob/gh-pages/public/index.html)
-  [demo02](http://htmlpreview.github.io/?https://github.com/waynehu2014/react-weektime-picker/blob/gh-pages/public/index.html)
+ [demo01](http://htmlpreview.github.com/?https://waynehu2014.github.io/react-weektime-picker/blob/gh-pages/public/index.html)
+  [demo02](http://htmlpreview.github.io/?https://waynehu2014.github.io/react-weektime-picker/blob/gh-pages/public/index.html)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
