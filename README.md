@@ -1,6 +1,7 @@
 # react-weektime-picker
 
 一个 React 周时间选择器组件，支持通过拖拽选择一周中的时间段。
+预览地址：https://wayne-007.github.io/react-weektime-picker/public/#
 
 ## 安装
 
@@ -20,36 +21,31 @@ yarn add react-weektime-picker
 ## 使用方法
 
 ```jsx
-import React, { useState } from 'react';
-import WeektimePicker from 'react-weektime-picker';
+import React, { useState } from 'react'
+import WeektimePicker from 'react-weektime-picker'
 
 function App() {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState('')
 
   const handleChange = (newValue) => {
-    setValue(newValue);
-    console.log('选择的时间段:', newValue);
-  };
+    setValue(newValue)
+    console.log('选择的时间段:', newValue)
+  }
 
-  return (
-    <WeektimePicker
-      value={value}
-      change_value={handleChange}
-    />
-  );
+  return <WeektimePicker value={value} change_value={handleChange} />
 }
 
-export default App;
+export default App
 ```
 
 ## API
 
 ### Props
 
-| 属性 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
-| value | string | '' | 选中的时间段，格式为 336 位的二进制字符串（7天 × 48个时间段） |
-| change_value | function | - | 值改变时的回调函数，参数为新值 |
+| 属性         | 类型     | 默认值 | 说明                                                            |
+| ------------ | -------- | ------ | --------------------------------------------------------------- |
+| value        | string   | ''     | 选中的时间段，格式为 336 位的二进制字符串（7 天 × 48 个时间段） |
+| change_value | function | -      | 值改变时的回调函数，参数为新值                                  |
 
 ### value 格式说明
 
