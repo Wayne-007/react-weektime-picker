@@ -16,14 +16,12 @@ yarn add react-weektime-picker
 
 - `react` (^16.8.0 || ^17.0.0 || ^18.0.0)
 - `react-dom` (^16.8.0 || ^17.0.0 || ^18.0.0)
-- `antd` (^4.0.0)
 
 ## 使用方法
 
 ```jsx
 import React, { useState } from 'react';
 import WeektimePicker from 'react-weektime-picker';
-import 'antd/dist/antd.css'; // 需要引入 antd 样式
 
 function App() {
   const [value, setValue] = useState('');

@@ -1,6 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import { Tooltip } from 'antd';
-import 'antd/dist/antd.css';
+import React, { useEffect, useState } from 'react';
 import styles from './index.module.scss';
 
 const hours = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
@@ -230,13 +228,13 @@ export const Index = props => {
                             // 全部小方块
                             weekTimes.map((i, key) => {
                                 return (
-                                    <Tooltip placement="top" key={key} title={tiptxt(key)}>
-                                        <div
-                                            data-index={key}
-                                            className={`${styles.timeCell} ${values.split('')[key] === '1' ? styles.active : ''} ${preViewIndex.includes(key) || copy_preViewIndex.includes(key) ? styles.preActive : ''}`}
-                                        >
-                                        </div>
-                                    </Tooltip>
+                                    <div
+                                        key={key}
+                                        data-index={key}
+                                        title={tiptxt(key)}
+                                        className={`${styles.timeCell} ${values.split('')[key] === '1' ? styles.active : ''} ${preViewIndex.includes(key) || copy_preViewIndex.includes(key) ? styles.preActive : ''}`}
+                                    >
+                                    </div>
                                 );
                             })
                         }
