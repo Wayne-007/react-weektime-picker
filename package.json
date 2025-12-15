@@ -1,6 +1,6 @@
 {
   "name": "react-weektime-picker",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "description": "一个 React 周时间选择器组件，支持通过拖拽选择一周中的时间段",
   "main": "src/components/react-weektime-picker/index.jsx",
   "module": "src/components/react-weektime-picker/index.jsx",
