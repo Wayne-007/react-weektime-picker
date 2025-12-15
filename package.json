@@ -1,22 +1,46 @@
 {
-  "name": "weektime-picker",
+  "name": "react-weektime-picker",
   "version": "0.1.0",
-  "private": true,
+  "description": "一个 React 周时间选择器组件，支持通过拖拽选择一周中的时间段",
+  "main": "src/components/react-weektime-picker/index.jsx",
+  "module": "src/components/react-weektime-picker/index.jsx",
+  "files": [
+    "src/components/react-weektime-picker",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "react",
+    "weektime",
+    "picker",
+    "time-picker",
+    "schedule",
+    "component"
+  ],
+  "author": "Wayne-007",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wayne-007/react-weektime-picker"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "antd": "^4.0.0"
+  },
   "dependencies": {
     "@craco/craco": "^5.6.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "antd": "^4.2.5",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
   "scripts": {
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepublishOnly": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"

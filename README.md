@@ -1,68 +1,91 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# react-weektime-picker
 
-## Available Scripts
+一个 React 周时间选择器组件，支持通过拖拽选择一周中的时间段。
 
-In the project directory, you can run:
+## 安装
 
-### `yarn start`
+```bash
+npm install react-weektime-picker
+# 或
+yarn add react-weektime-picker
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 依赖
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+本组件依赖以下包，请确保已安装：
 
-### `yarn test`
+- `react` (^16.8.0 || ^17.0.0 || ^18.0.0)
+- `react-dom` (^16.8.0 || ^17.0.0 || ^18.0.0)
+- `antd` (^4.0.0)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 使用方法
 
-### `yarn build`
+```jsx
+import React, { useState } from 'react';
+import WeektimePicker from 'react-weektime-picker';
+import 'antd/dist/antd.css'; // 需要引入 antd 样式
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+function App() {
+  const [value, setValue] = useState('');
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+  const handleChange = (newValue) => {
+    setValue(newValue);
+    console.log('选择的时间段:', newValue);
+  };
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  return (
+    <WeektimePicker
+      value={value}
+      change_value={handleChange}
+    />
+  );
+}
 
-### `yarn eject`
+export default App;
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## API
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Props
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+| 属性 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| value | string | '' | 选中的时间段，格式为 336 位的二进制字符串（7天 × 48个时间段） |
+| change_value | function | - | 值改变时的回调函数，参数为新值 |
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### value 格式说明
 
-## Learn More
+`value` 是一个长度为 336 的二进制字符串，表示一周 7 天，每天 48 个时间段（每 30 分钟一个时间段）。
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `'0'` 表示未选中
+- `'1'` 表示已选中
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+例如：`'0000...1111...'` 表示某些时间段被选中。
 
-### Code Splitting
+## 功能特性
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- ✅ 支持鼠标拖拽选择时间段
+- ✅ 可视化显示一周的时间安排
+- ✅ 实时预览选择的时间段
+- ✅ 支持清空选择
+- ✅ 鼠标悬停提示当前时间段
 
-### Analyzing the Bundle Size
+## 开发
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```bash
+# 安装依赖
+yarn install
 
-### Making a Progressive Web App
+# 启动开发服务器
+yarn start
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+# 运行测试
+yarn test
 
-### Advanced Configuration
+# 构建项目
+yarn build
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## License
 
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+MIT
